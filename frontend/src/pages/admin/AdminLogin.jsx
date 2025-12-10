@@ -4,7 +4,7 @@ export default function AdminLogin({ onLogin }){
   const [password, setPassword] = useState('password');
   async function submit(e){
     e.preventDefault();
-    const res = await fetch('/api/login', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({username,password})});
+    const res = await fetch('https://assesment-sm4p.onrender.com/api/login', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({username,password})});
     if (res.ok){ const j = await res.json(); onLogin(j.token); } else { alert('Login failed'); }
   }
   return (

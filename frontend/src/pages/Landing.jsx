@@ -8,8 +8,8 @@ export default function Landing(){
 
   useEffect(()=>{
     // keep the same API calls you already have
-    fetch('/api/projects').then(r=>r.json()).then(setProjects).catch(()=>setProjects([]));
-    fetch('/api/clients').then(r=>r.json()).then(setClients).catch(()=>setClients([]));
+    fetch('https://assesment-sm4p.onrender.com/api/login/api/projects').then(r=>r.json()).then(setProjects).catch(()=>setProjects([]));
+    fetch('https://assesment-sm4p.onrender.com/api/login/api/clients').then(r=>r.json()).then(setClients).catch(()=>setClients([]));
   },[]);
 
   async function submitContact(e){
@@ -116,7 +116,7 @@ export default function Landing(){
           <div className="clients-row">
             {clients && clients.length ? clients.map(c=>(
               <div className="client-card" key={c._id}>
-                <div className="client-media"><img src={c.image || '/assets/Screenshot 2025-09-19 121333.png'} /></div>
+                <div className="client-media"><img src={c.image || "/assets/Screenshot 2025-09-19 121333.png"} /></div>
                 <div className="client-body">
                    <p className="small">{c.description}</p>
                   <h4>{c.name}</h4>

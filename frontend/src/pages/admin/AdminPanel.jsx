@@ -8,7 +8,7 @@ function UploadForm({ token, url, fields, onDone }){
     const fd = new FormData();
     if (file) fd.append('image', file);
     for(const k in values) fd.append(k, values[k]);
-    const res = await fetch(url, { method:'POST', headers: { Authorization: 'Bearer ' + token }, body: fd });
+    const res = await fetch('https://assesment-sm4p.onrender.com/api/login', { method:'POST', headers: { Authorization: 'Bearer ' + token }, body: fd });
     if(res.ok){ onDone(); setFile(null); setValues(fields.reduce((s,f)=>({...s,[f.name]:''}),{})); }
     else { alert('Error'); }
   }
