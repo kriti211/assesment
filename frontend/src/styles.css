@@ -1,0 +1,85 @@
+/* Landing page styles - replace entire file or append */
+
+/* Variables */
+:root{
+  --primary:#0b6efd;
+  --muted:#7b8794;
+  --bg:#f4f6f8;
+  --card:#ffffff;
+}
+
+/* Global */
+body{ font-family: Inter, Arial, Helvetica, sans-serif; background:var(--bg); margin:0; color:#222; }
+.lp-container{ max-width:1100px; margin:0 auto; padding:20px; }
+
+/* Header */
+.lp-header{ background:white; box-shadow:0 1px 4px rgba(16,24,40,0.06); position:sticky; top:0; z-index:40; }
+.lp-header-row{ display:flex; align-items:center; justify-content:space-between; }
+.brand{ display:flex; align-items:center; gap:10px; }
+.brand-logo{ width:36px; height:36px; object-fit:contain; }
+.brand-name{ font-weight:700; font-size:18px; color:var(--primary); }
+.lp-nav a{ margin-left:18px; color:#333; text-decoration:none; font-weight:600; }
+.lp-nav .btn-primary{ margin-left:18px; }
+
+/* Hero */
+.lp-hero{ background:linear-gradient(180deg, #ffffff 0%, #fbfdff 100%); padding:40px 0 60px; position:relative; overflow:hidden;}
+.hero-grid{ display:grid; grid-template-columns:1fr 360px; gap:28px; align-items:center; }
+.hero-left h1{ font-size:36px; margin:0 0 12px; line-height:1.05; }
+.hero-lead{ color:var(--muted); margin-bottom:18px; }
+.hero-stats{ display:flex; gap:20px; margin-top:12px; color:#222; }
+.hero-stats .small{ color:var(--muted); font-size:13px; }
+
+/* Hero Form Card */
+.form-card{ padding:18px; border-radius:10px; background:var(--card); box-shadow:0 8px 30px rgba(11,110,237,0.06); }
+.form-card h3{ margin:0 0 8px; font-size:18px; }
+.form-card form input, .form-card form select{ width:100%; padding:10px; margin-bottom:10px; border-radius:6px; border:1px solid #e6eefc; }
+.btn-primary{ background:var(--primary); color:white; border:none; padding:10px 14px; border-radius:8px; cursor:pointer; font-weight:600; }
+.btn-outline{ background:transparent; border:1px solid #e6eefc; color:var(--primary); padding:8px 12px; border-radius:6px; cursor:pointer; }
+
+/* decorative shape */
+.hero-shape{ position:absolute; right:-40px; top:30px; width:420px; opacity:0.35; transform:rotate(2deg); }
+
+/* Sections */
+.lp-section{ padding:48px 0; background:transparent; }
+.lp-section--alt{ background:#fff; }
+.section-title{ text-align:center; margin-bottom:28px; font-size:26px; }
+
+/* Projects row */
+.projects-row{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; align-items:start; }
+.project-card{ background:var(--card); border-radius:10px; overflow:hidden; box-shadow:0 6px 20px rgba(20,29,40,0.05); display:flex; flex-direction:column; }
+.project-card img{ width:100%; height:160px; object-fit:cover; display:block; }
+.project-body{ padding:12px; flex:1; display:flex; flex-direction:column; gap:8px; }
+.project-body h4{ margin:0; font-size:16px; }
+.project-body .small{ color:var(--muted); font-size:13px; }
+
+/* Clients */
+.clients-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.client-card{ display:flex; gap:12px; align-items:flex-start; background:var(--card); padding:14px; border-radius:10px; box-shadow:0 6px 20px rgba(20,29,40,0.04); }
+.client-media img{ width:76px; height:76px; border-radius:50%; object-fit:cover; }
+.client-body h4{ margin:0 0 6px; }
+.client-body .small{ color:var(--muted); font-size:13px; }
+
+/* Contact grid */
+.contact-grid{ display:grid; grid-template-columns:1fr 420px; gap:28px; align-items:start; }
+.contact-form input{ width:100%; padding:10px; margin-bottom:10px; border-radius:8px; border:1px solid #eef2fb; }
+
+/* Newsletter */
+.newsletter-section{ background:var(--primary); color:white; padding:36px 0; }
+.newsletter-grid{ display:flex; justify-content:space-between; align-items:center; gap:16px; }
+.newsletter-form{ display:flex; gap:10px; }
+.newsletter-form input{ padding:10px; border-radius:8px; border:none; min-width:260px; }
+
+/* Footer */
+.lp-footer{ padding:22px 0; background:#0b1b2b; color:#9fb0d6; }
+
+/* Responsive */
+@media(max-width:980px){
+  .projects-row{ grid-template-columns:repeat(2,1fr); }
+  .clients-row{ grid-template-columns:repeat(1,1fr); }
+  .hero-grid{ grid-template-columns:1fr; }
+  .contact-grid{ grid-template-columns:1fr; }
+}
+@media(max-width:520px){
+  .projects-row{ grid-template-columns:repeat(1,1fr); }
+  .lp-nav a{ display:none; }
+}
