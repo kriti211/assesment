@@ -1,4 +1,4 @@
-# Flipr Placement - Fullstack Task (Completed)
+
 
 This repository implements the Flipr full-stack task:
 - Landing page with Projects, Clients, Contact form, Newsletter subscription.
@@ -6,13 +6,9 @@ This repository implements the Flipr full-stack task:
 - Backend: Node.js + Express + MongoDB Atlas (Mongoose), image upload & cropping with Multer + Sharp.
 - Frontend: React + Vite (single-page with hash routing).
 
-## Quick setup (local development)
-
-### Prerequisites
 - Node.js 18+ and npm
 - A MongoDB Atlas cluster (free tier) and connection string (URI)
 
-### Backend
 1. Copy `.env.example` to `.env` in the `backend/` folder and fill values:
    ```
    MONGO_URI=your_mongodb_atlas_connection_string
@@ -30,8 +26,6 @@ This repository implements the Flipr full-stack task:
    ```bash
    curl -X POST http://localhost:4000/api/setup-admin -H "Content-Type: application/json" -d '{"username":"admin","password":"password"}'
    ```
-
-### Frontend
 1. Start frontend:
    ```bash
    cd frontend
@@ -40,12 +34,10 @@ This repository implements the Flipr full-stack task:
    ```
    Frontend runs on port 3000 and proxies `/api` to backend.
 
-### Usage
 - Visit `http://localhost:3000` for the landing page.
 - Visit `http://localhost:3000/#admin` for admin login and panel.
 - Admin login requires token obtained from `/api/login` (created via `/api/setup-admin`).
 
-## API Endpoints (summary)
 - `POST /api/setup-admin` - create admin (username, password)
 - `POST /api/login` - login -> returns JWT token
 - `GET /api/projects` - list projects
@@ -60,8 +52,7 @@ This repository implements the Flipr full-stack task:
 - `GET /api/subscribers` - list subscribers (auth)
 - Static files: `GET /uploads/<file>`
 
-## Notes
 - Images uploaded via admin are cropped to 450x350 and served from `/uploads`.
 - For deployment: set `MONGO_URI` and `JWT_SECRET` environment variables on the hosting platform.
 
-Good luck with your submission!
+
